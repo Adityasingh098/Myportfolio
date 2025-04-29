@@ -1,202 +1,191 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-
-interface Course {
-  name: string;
-}
-
-interface Education {
-  degree: string;
-  institution: string;
-  period: string;
-  description: string;
-  coursework: string[];
-}
-
-interface Certification {
-  name: string;
-  organization: string;
-  year: string;
-  link?: string;
-}
-
-interface Achievement {
-  description: string;
-}
-
-const education: Education = {
-  degree: 'B.S. in Computer Science',
-  institution: 'Stanford University',
-  period: '2014 - 2018',
-  description: 'Graduated with honors, GPA 3.85/4.0. Focused on artificial intelligence, web development, and distributed systems.',
-  coursework: [
-    'Algorithms',
-    'Machine Learning',
-    'Web Applications',
-    'Databases',
-    'Artificial Intelligence',
-    'Human-Computer Interaction',
-    'Distributed Systems',
-    'Computer Networks'
-  ]
-};
-
-const certifications: Certification[] = [
-  {
-    name: 'AWS Certified Solutions Architect',
-    organization: 'Amazon Web Services',
-    year: '2023',
-    link: '#'
-  },
-  {
-    name: 'TensorFlow Developer Certificate',
-    organization: 'Google',
-    year: '2022',
-    link: '#'
-  },
-  {
-    name: 'React Advanced Concepts',
-    organization: 'Frontend Masters',
-    year: '2021',
-    link: '#'
-  }
-];
-
-const achievements: Achievement[] = [
-  {
-    description: 'Winner of the 2022 TechInnovate Hackathon - AI Category'
-  },
-  {
-    description: 'Speaker at ReactConf 2023 - "Building Better UIs with React Hooks"'
-  },
-  {
-    description: 'Published article in Medium\'s JavaScript publication - "Advanced State Management in React Applications"'
-  },
-  {
-    description: 'Open source contributor to several popular JavaScript and Python libraries'
-  }
-];
-
-// Example projects card data
-const projects = [
-  {
-    title: 'AI Research Project',
-    description: 'Developed a neural network for image recognition with 98% accuracy.',
-    tags: ['AI', 'Neural Networks', 'Python']
-  },
-  {
-    title: 'Web App for Students',
-    description: 'Built a full-stack MERN application for student collaboration.',
-    tags: ['React', 'Node.js', 'MongoDB']
-  }
-];
+import { FaGraduationCap, FaCertificate, FaAward, FaCalendar, FaExternalLinkAlt } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Education = () => {
+  const education = [
+    {
+      icon: FaGraduationCap,
+      title: 'Bachelor of Technology',
+      institution: 'Lovely Professional University',
+      year: '2022 - 2026',
+      description: 'Computer Science with Specialization in Cyber Security',
+      achievements: [
+        'Participated in multiple hackathons and coding competitions',
+        'Active member of the university Cyber Security Club'
+      ]
+    },
+    {
+      icon: FaGraduationCap,
+      title: 'Higher Secondary Education',
+      institution: 'Madhuban Central School',
+      year: '2020 - 2022',
+      description: 'Science Stream',
+      achievements: [
+        'Percentage: 82%'
+      ]
+    }
+  ];
+
+  const certifications = [
+    {
+      icon: FaCertificate,
+      title: 'Microsoft Power Platform Fundamentals',
+      issuer: 'Coursera',
+      year: '2024',
+      description: 'Fundamentals of Power Apps, Power Automate, and Power BI for business process automation',
+      link: 'https://coursera.org/share/51c785aedf958cb59d438b2b714ee70a',
+      image: '/certifications/power-platform.png'
+    },
+    {
+      icon: FaCertificate,
+      title: 'Cloud Computing',
+      issuer: 'CipherSchools',
+      year: '2024',
+      description: 'Comprehensive training in cloud computing concepts and technologies',
+      link: 'https://www.cipherschools.com/certificate/preview?id=67dc55c5c68dc3ae19f3e96e',
+      image: '/certifications/cloud-computing.png'
+    },
+    {
+      icon: FaCertificate,
+      title: 'CompTIA Linux+ XKO-005',
+      issuer: 'Cybrary',
+      year: '2024',
+      description: 'Linux system administration and security certification',
+      link: 'https://app.cybrary.it/courses/api/certificate/CC-95c94236-4b8d-4e28-950a-e67421fc6caf/view',
+      image: '/certifications/linux-plus.png'
+    }
+  ];
+
   return (
-    <section className="py-20 bg-black">
+    <section id="education" className="min-h-screen py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-center mb-12"
-        >
-          Education & <span className="text-secondary">Certifications</span>
-        </motion.h2>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Left: Education and Projects side by side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="h-full"
-          >
-            {/* Education Card */}
-            <div className="bg-dark p-6 rounded-lg h-full flex flex-col">
-              <div className="flex items-center gap-2 mb-8">
-                <span className="bg-secondary text-primary px-2 py-1 rounded text-sm">ED</span>
-                <h3 className="text-2xl text-secondary">Education</h3>
-              </div>
-              <div className="flex justify-between items-start mb-4">
-                <h4 className="text-xl font-bold">{education.degree}</h4>
-                <span className="text-secondary bg-primary px-3 py-1 rounded-full text-sm">
-                  {education.period}
-                </span>
-              </div>
-              <p className="text-tertiary mb-4">{education.institution}</p>
-              <p className="text-tertiary mb-6">{education.description}</p>
-              <div className="mt-auto">
-                <h5 className="text-secondary mb-4">Relevant Coursework:</h5>
-                <div className="flex flex-wrap gap-2">
-                  {education.coursework.map((course, index) => (
-                    <span
-                      key={index}
-                      className="bg-primary text-tertiary px-3 py-1 rounded-full text-sm"
-                    >
-                      {course}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right: Certifications */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-2 mb-8">
-              <span className="bg-secondary text-primary px-2 py-1 rounded text-sm">CF</span>
-              <h3 className="text-2xl text-secondary">Certifications</h3>
-            </div>
-
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div key={index} className="bg-dark p-6 rounded-lg">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-xl font-bold">{cert.name}</h4>
-                    <span className="text-secondary bg-primary px-3 py-1 rounded-full text-sm">
-                      {cert.year}
-                    </span>
-                  </div>
-                  <p className="text-tertiary mb-4">{cert.organization}</p>
-                  <Link 
-                    href={cert.link || '#'} 
-                    className="inline-block bg-primary text-secondary px-4 py-2 rounded hover:bg-opacity-80 transition-colors"
-                  >
-                    View
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Achievements Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto mt-12"
+          className="max-w-6xl mx-auto"
         >
-          <div className="bg-dark p-6 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6">Achievements</h3>
-            <ul className="space-y-3">
-              {achievements.map((achievement, index) => (
-                <li key={index} className="text-tertiary flex items-start gap-2">
-                  <span className="text-secondary">•</span>
-                  {achievement.description}
-                </li>
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-education bg-clip-text text-transparent animate-text-gradient"
+            >
+              Education
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="h-1 w-24 mx-auto bg-gradient-education rounded-full"
+            />
+          </div>
+
+          <div className="space-y-12">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative bg-white p-8 rounded-xl border border-accent/10 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 rounded-lg bg-white border border-accent/10 group-hover:bg-accent/5 group-hover:border-accent/30 transition-colors">
+                      <edu.icon className="text-2xl text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">{edu.title}</h3>
+                      <p className="text-text-secondary">{edu.institution}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-text-secondary mb-4">
+                    <FaCalendar className="text-accent" />
+                    <span>{edu.year}</span>
+                  </div>
+                  
+                  <p className="text-text-secondary mb-4">{edu.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {edu.achievements.map((achievement, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-white border border-accent/10 text-text-secondary text-sm group-hover:border-accent/30 transition-colors"
+                      >
+                        {achievement}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Certifications */}
+          <div className="mt-20">
+            <h3 className="text-2xl font-bold text-text-primary mb-8 flex items-center gap-2">
+              <FaCertificate className="text-accent" />
+              <span>Certifications</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group relative bg-white p-6 rounded-xl border border-accent/10 hover:border-accent/30 transition-all shadow-sm hover:shadow-md"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  
+                  <div className="relative z-10">
+                    {/* Certificate Image */}
+                    <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-gray-50">
+                      <Image
+                        src={cert.image}
+                        alt={cert.title}
+                        fill
+                        className="object-contain p-2"
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-lg bg-white border border-accent/10 group-hover:bg-accent/5 group-hover:border-accent/30 transition-colors">
+                        <cert.icon className="text-2xl text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-text-primary group-hover:text-accent transition-colors">{cert.title}</h4>
+                        <p className="text-accent">{cert.issuer}</p>
+                      </div>
+                    </div>
+                    <p className="text-text-secondary mb-4">{cert.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-text-secondary">{cert.year}</span>
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
+                      >
+                        View Certificate
+                        <FaExternalLinkAlt className="text-sm" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </div>
         </motion.div>
       </div>

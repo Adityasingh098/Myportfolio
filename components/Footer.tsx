@@ -1,77 +1,66 @@
 import React from 'react';
-import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
+  const currentYear = new Date().getFullYear();
+  
   const socialLinks = [
-    { 
-      icon: <FaGithub className="w-5 h-5" />, 
-      href: 'https://github.com/yourusername',
-      label: 'GitHub'
+    {
+      name: 'GitHub',
+      icon: FaGithub,
+      url: 'https://github.com/Adityasingh098'
     },
-    { 
-      icon: <FaLinkedin className="w-5 h-5" />, 
-      href: 'https://linkedin.com/in/yourusername',
-      label: 'LinkedIn'
+    {
+      name: 'LinkedIn',
+      icon: FaLinkedin,
+      url: 'https://www.linkedin.com/in/aditya-singh-b89b25225/'
     },
-    { 
-      icon: <FaEnvelope className="w-5 h-5" />, 
-      href: 'mailto:adityasingh917632@gmail.com',
-      label: 'Email'
+    {
+      name: 'Email',
+      icon: FaEnvelope,
+      url: 'mailto:adityasingh89525@gmail.com'
     }
   ];
 
   return (
-    <footer className="bg-black py-12 border-t border-dark">
+    <footer className="bg-white py-12 border-t border-accent/10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center space-y-8">
-          {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-tertiary hover:text-secondary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-
+        <div className="max-w-6xl mx-auto">
           {/* Social Links */}
-          <div className="flex justify-center gap-6">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
+          <div className="flex justify-center gap-6 mb-8">
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={link.name}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-tertiary hover:text-secondary transition-colors"
-                aria-label={link.label}
+                className="text-text-secondary hover:text-accent transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
-                {link.icon}
-              </a>
+                <link.icon className="text-2xl" />
+              </motion.a>
             ))}
           </div>
 
           {/* Copyright */}
-          <div className="text-center space-y-2">
-            <p className="text-tertiary">
-              © {new Date().getFullYear()} Aditya Kumar. All rights reserved.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center text-text-secondary"
+          >
+            <p className="text-sm">
+              © {currentYear} Aditya Singh. All rights reserved.
             </p>
-            <p className="text-tertiary">
-              Full Stack Developer & AI Specialist
+            <p className="text-sm mt-2">
+              Built with Next.js, Tailwind CSS, and ❤️
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>
