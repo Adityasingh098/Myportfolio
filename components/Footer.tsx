@@ -9,17 +9,17 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: FaGithub,
-      url: 'https://github.com/Adityasingh098'
+      url: 'https://github.com/Goluanand'
     },
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://www.linkedin.com/in/aditya-singh-b89b25225/'
+      url: 'https://www.linkedin.com/in/goluanand20041/'
     },
     {
       name: 'Email',
       icon: FaEnvelope,
-      url: 'mailto:adityasingh89525@gmail.com'
+      url: 'mailto:goluandnadrathaur@gmail.com'
     }
   ];
 
@@ -55,7 +55,7 @@ const Footer = () => {
             className="text-center text-text-secondary"
           >
             <p className="text-sm">
-              © {currentYear} Aditya Singh. All rights reserved.
+              © {currentYear} Golu Anand. All rights reserved.
             </p>
             <p className="text-sm mt-2">
               Built with Next.js, Tailwind CSS, and ❤️

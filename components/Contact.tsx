@@ -39,14 +39,14 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: 'Email',
-      value: 'adityasingh917632@gmail.com',
-      link: 'mailto:adityasingh917632@gmail.com'
+      value: 'goluandnadrathaur@gmail.com',
+      link: 'mailto:goluandnadrathaur@gmail.com'
     },
     {
       icon: FaPhone,
       title: 'Phone',
-      value: '+91 6200504113',
-      link: 'tel:+916200504113'
+      value: '+91 8229870090',
+      link: 'tel:+918229870090'
     },
     {
       icon: FaMapMarkerAlt,
@@ -60,12 +60,12 @@ const Contact = () => {
     {
       icon: FaGithub,
       label: 'GitHub',
-      link: 'https://github.com/yourusername'
+      link: 'https://github.com/Goluanand'
     },
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
-      link: 'https://linkedin.com/in/yourusername'
+      link: 'https://www.linkedin.com/in/goluanand20041/'
     },
     {
       icon: FaTwitter,

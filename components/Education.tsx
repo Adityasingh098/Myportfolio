@@ -31,12 +31,12 @@ const Education = () => {
   const certifications = [
     {
       icon: FaCertificate,
-      title: 'Microsoft Power Platform Fundamentals',
-      issuer: 'Coursera',
-      year: '2024',
-      description: 'Fundamentals of Power Apps, Power Automate, and Power BI for business process automation',
-      link: 'https://coursera.org/share/51c785aedf958cb59d438b2b714ee70a',
-      image: '/certifications/power-platform.png'
+      title: 'C++ with DSA',
+      issuer: 'Coding Ninjas',
+      year: '2023',
+      description: 'Comprehensive certification covering C++ programming fundamentals and advanced Data Structures & Algorithms, including implementation of complex data structures and algorithm optimization techniques.',
+      link: 'https://certificate.codingninjas.com/view/your-certificate-id',
+      image: '/certifications/cpp.png'
     },
     {
       icon: FaCertificate,
@@ -45,16 +45,16 @@ const Education = () => {
       year: '2024',
       description: 'Comprehensive training in cloud computing concepts and technologies',
       link: 'https://www.cipherschools.com/certificate/preview?id=67dc55c5c68dc3ae19f3e96e',
-      image: '/certifications/cloud-computing.png'
+      image: '/certifications/data.png'
     },
     {
       icon: FaCertificate,
-      title: 'CompTIA Linux+ XKO-005',
-      issuer: 'Cybrary',
+      title: 'Supervised Machine Learning',
+      issuer: 'Stanford University',
       year: '2024',
-      description: 'Linux system administration and security certification',
-      link: 'https://app.cybrary.it/courses/api/certificate/CC-95c94236-4b8d-4e28-950a-e67421fc6caf/view',
-      image: '/certifications/linux-plus.png'
+      description: 'Advanced certification in supervised learning algorithms, model evaluation, and practical applications of machine learning.',
+      link: 'https://www.coursera.org/account/accomplishments/verify/your-certificate-id',
+      image: '/certifications/ml.png'
     }
   ];
 

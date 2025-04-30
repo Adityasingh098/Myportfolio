@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { FaCode, FaCloud, FaShieldAlt, FaTrophy } from 'react-icons/fa';
+import { FaCode, FaCloud, FaShieldAlt, FaTrophy, FaChartLine } from 'react-icons/fa';
 
 const About = () => {
   const [leetcodeCount, setLeetcodeCount] = useState(0);
@@ -123,7 +123,7 @@ const About = () => {
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-accent/20">
                 <Image
                   src="/profile.jpg"
-                  alt="Aditya"
+                  alt="Golu Anand"
                   fill
                   className="object-cover"
                   priority
@@ -139,19 +139,20 @@ const About = () => {
               className="flex-1 text-center md:text-left"
             >
               <h3 className="text-xl md:text-3xl font-bold text-text-primary mb-4 md:mb-6">
-                Full Stack Developer & Cloud Engineer
+                Data Analyst
               </h3>
               <p className="text-base md:text-lg text-text-secondary mb-6 md:mb-8 leading-relaxed">
-                I'm a passionate developer with expertise in building scalable web applications
-                and cloud infrastructure. My journey in technology started with a curiosity
-                for how things work, and it has evolved into a career focused on creating
-                innovative solutions.
+                I'm a passionate data analyst with expertise in data visualization, statistical analysis,
+                and business intelligence. My journey in technology started with a curiosity for how
+                data can drive business decisions, and it has evolved into a career focused on
+                creating data-driven solutions.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div className="bg-secondary p-4 md:p-6 rounded-xl border border-accent/10">
                   <h4 className="text-accent font-semibold mb-2">Professional Experience</h4>
-                  <p className="text-sm md:text-base text-text-secondary">Cloud & Security</p>
-                  <p className="text-sm md:text-base text-text-secondary">Full-stack development project</p>
+                  <p className="text-sm md:text-base text-text-secondary">Machine Learning & Predictive Modeling</p>
+                  <p className="text-sm md:text-base text-text-secondary">Data Mining & Analysis</p>
+                  <p className="text-sm md:text-base text-text-secondary">Deep Learning & AI Applications</p>
                 </div>
                 <div ref={ref} className="bg-secondary p-4 md:p-6 rounded-xl border border-accent/10">
                   <h4 className="text-accent font-semibold mb-2">Tech Platform</h4>
@@ -181,20 +182,20 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {[
                 {
-                  title: 'Cloud Security Platform',
-                  description: 'Advanced security monitoring system',
-                  icon: FaShieldAlt,
+                  title: 'IPL Performance Analysis',
+                  description: 'Interactive dashboard analyzing IPL team and player performance using Tableau, featuring advanced visualizations and predictive insights',
+                  icon: FaChartLine,
                   color: 'accent'
                 },
                 {
-                  title: 'Web Application',
-                  description: 'Full-stack development project',
+                  title: 'Machine Learning Model',
+                  description: 'Developed predictive models for business forecasting using Python and scikit-learn',
                   icon: FaCode,
                   color: 'accent'
                 },
                 {
-                  title: 'Cloud Infrastructure',
-                  description: 'Scalable cloud architecture',
+                  title: 'Data Mining Project',
+                  description: 'Implemented data mining techniques for pattern recognition and business intelligence',
                   icon: FaCloud,
                   color: 'accent'
                 }

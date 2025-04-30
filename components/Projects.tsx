@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { SiTypescript, SiReact, SiNextdotjs, SiPython, SiAmazon, SiDocker, SiJavascript, SiNodedotjs, SiMongodb } from 'react-icons/si';
+import { FaCode, FaGithub, FaExternalLinkAlt, FaChartLine, FaDatabase } from 'react-icons/fa';
+import { SiTypescript, SiReact, SiNextdotjs, SiPython, SiAmazon, SiDocker, SiJavascript, SiNodedotjs, SiMongodb, SiTableau, SiPostgresql } from 'react-icons/si';
 import Image from 'next/image';
 
 const Projects = () => {
@@ -13,27 +13,32 @@ const Projects = () => {
       description: 'A serverless file storage platform using AWS S3 and Lambda, enabling users to securely upload, manage, and retrieve their files in the cloud.',
       technologies: [SiTypescript, SiReact, SiAmazon, SiDocker],
       category: 'cloud',
-      github: 'https://github.com/Adityasingh098/cloud-vault-web-space',
-      live: 'https://cloud-vault-web-space.vercel.app/',
       image: '/projects/cloud-storage.png'
+    },
+    {
+      title: 'Data Analytics Dashboard',
+      description: 'A comprehensive data analytics platform with real-time data processing, interactive visualizations, and predictive analytics capabilities.',
+      technologies: [SiPython, FaDatabase, SiPostgresql, FaChartLine],
+      category: 'data',
+      github: 'https://github.com/goluanand/data-analytics-dashboard',
+      live: 'https://data-analytics-dashboard.vercel.app/',
+      image: '/projects/data-analytics.png'
     },
     {
       title: 'QuickMart E-Commerce Platform',
       description: 'Full-stack e-commerce solution with advanced search, payment integration, and inventory management.',
       technologies: [SiNextdotjs, SiNodedotjs, SiMongodb],
       category: 'web',
-      github: 'https://github.com/Adityasingh098/quickmart-commerce-hub',
-      live: 'https://quickmart-commerce-hub.vercel.app/',
       image: '/projects/quickmart.png'
     },
     {
-      title: 'Intrusion Detection System',
-      description: 'Advanced network security monitoring tool with intrusion detection and real-time threat analysis.',
-      technologies: [SiPython, SiReact, SiDocker],
-      category: 'security',
-      github: 'https://github.com/Adityasingh098/web-eye-alert',
-      live: 'https://web-eye-alert.vercel.app/',
-      image: '/projects/ids.png'
+      title: 'IPL Performance Visualization',
+      description: 'Interactive Tableau dashboard analyzing IPL team and player performance, featuring advanced visualizations and predictive insights.',
+      technologies: [SiTableau, FaChartLine, SiPython],
+      category: 'data',
+      github: 'https://github.com/goluanand/ipl-performance-analysis',
+      live: 'https://public.tableau.com/app/profile/goluanand/viz/IPLPerformanceAnalysis',
+      image: '/projects/ipl-analysis.png'
     }
   ];
 
@@ -69,7 +74,7 @@ const Projects = () => {
 
           {/* Filters */}
           <div className="flex justify-center gap-4 mb-12">
-            {['all', 'web', 'cloud', 'security'].map((filter) => (
+            {['all', 'web', 'cloud', 'data'].map((filter) => (
               <motion.button
                 key={filter}
                 whileHover={{ scale: 1.05 }}
@@ -139,29 +144,31 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group"
-                    >
-                      <FaGithub />
-                      <span className="text-sm">GitHub</span>
-                      <span className="w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group"
-                    >
-                      <FaExternalLinkAlt />
-                      <span className="text-sm">Live Demo</span>
-                      <span className="w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
-                    </a>
-                  </div>
+                  {/* Links - Only show if project has github and live properties */}
+                  {project.github && project.live && (
+                    <div className="flex gap-4">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group"
+                      >
+                        <FaGithub />
+                        <span className="text-sm">GitHub</span>
+                        <span className="w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+                      </a>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors group"
+                      >
+                        <FaExternalLinkAlt />
+                        <span className="text-sm">Live Demo</span>
+                        <span className="w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
