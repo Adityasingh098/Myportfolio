@@ -39,14 +39,14 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: 'Email',
-      value: 'goluandnadrathaur@gmail.com',
-      link: 'mailto:goluandnadrathaur@gmail.com'
+      value: 'adityasingh917632@gmail.com',
+      link: 'mailto:adityasingh917632@gmail.com'
     },
     {
       icon: FaPhone,
       title: 'Phone',
-      value: '+91 8229870090',
-      link: 'tel:+918229870090'
+      value: '+91 6200504113',
+      link: 'tel:+916200504113'
     },
     {
       icon: FaMapMarkerAlt,

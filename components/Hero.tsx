@@ -6,9 +6,9 @@ import {
 } from 'react-icons/si';
 
 const TITLES = [
-  { text: "Data Analyst", className: "text-text-secondary" },
-  { text: "Business Intelligence Analyst", className: "text-accent" },
-  { text: "Data Visualization Expert", className: "text-red-500" }
+  { text: "Full Stack Developer", className: "text-text-secondary" },
+  { text: "Cloud Engineer", className: "text-accent" },
+  { text: "Security Engineer", className: "text-red-500" }
 ];
 
 const techIcons = [
@@ -101,7 +101,7 @@ const Hero = () => {
               <motion.h1
                 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-hero bg-clip-text text-transparent"
               >
-                Hi, I'm <span className="text-accent">Golu Anand</span>
+                Hi, I'm <span className="text-accent">Aditya</span>
               </motion.h1>
               <motion.div
                 className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-hero rounded-full"
@@ -150,9 +150,9 @@ const Hero = () => {
               className="flex gap-4 mb-8 justify-center md:justify-start"
             >
               {[
-                { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/goluanand20041/", label: "LinkedIn" },
-                { icon: <FaGithub />, href: "https://github.com/Goluanand", label: "GitHub" },
-                { icon: <FaEnvelope />, href: "mailto:goluandnadrathaur@gmail.com", label: "Email" }
+                { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/aditya-singh-55877a1b6/", label: "LinkedIn" },
+                { icon: <FaGithub />, href: "https://github.com/Adityasingh098", label: "GitHub" },
+                { icon: <FaEnvelope />, href: "mailto:adityasingh917632@gmail.com", label: "Email" }
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -203,7 +203,7 @@ const Hero = () => {
                 </span>
               </motion.a>
               <motion.a
-                href="https://drive.google.com/file/d/1eLFHvrx0Ah2LniY4rio5Xw1iD7XPfWWi/view?usp=sharing"
+                href="https://drive.google.com/file/d/1VO5VDNd6yEGR5NTakvF0KBBRquMV7ppL/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}

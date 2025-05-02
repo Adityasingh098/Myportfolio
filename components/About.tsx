@@ -139,20 +139,20 @@ const About = () => {
               className="flex-1 text-center md:text-left"
             >
               <h3 className="text-xl md:text-3xl font-bold text-text-primary mb-4 md:mb-6">
-                Data Analyst
+                Full Stack Developer
               </h3>
               <p className="text-base md:text-lg text-text-secondary mb-6 md:mb-8 leading-relaxed">
-                I'm a passionate data analyst with expertise in data visualization, statistical analysis,
-                and business intelligence. My journey in technology started with a curiosity for how
-                data can drive business decisions, and it has evolved into a career focused on
-                creating data-driven solutions.
+                I'm a passionate Full Stack Developer with expertise in web development, cloud computing,
+                and security engineering. My journey in technology started with a curiosity for how
+                software can solve real-world problems, and it has evolved into a career focused on
+                creating robust and secure applications.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div className="bg-secondary p-4 md:p-6 rounded-xl border border-accent/10">
                   <h4 className="text-accent font-semibold mb-2">Professional Experience</h4>
-                  <p className="text-sm md:text-base text-text-secondary">Machine Learning & Predictive Modeling</p>
-                  <p className="text-sm md:text-base text-text-secondary">Data Mining & Analysis</p>
-                  <p className="text-sm md:text-base text-text-secondary">Deep Learning & AI Applications</p>
+                  <p className="text-sm md:text-base text-text-secondary">Full Stack Development</p>
+                  <p className="text-sm md:text-base text-text-secondary">Cloud Engineering</p>
+                  <p className="text-sm md:text-base text-text-secondary">Security Engineering</p>
                 </div>
                 <div ref={ref} className="bg-secondary p-4 md:p-6 rounded-xl border border-accent/10">
                   <h4 className="text-accent font-semibold mb-2">Tech Platform</h4>

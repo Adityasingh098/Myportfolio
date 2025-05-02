@@ -31,30 +31,30 @@ const Education = () => {
   const certifications = [
     {
       icon: FaCertificate,
-      title: 'C++ with DSA',
+      title: 'Cloud Computing',
       issuer: 'Coding Ninjas',
       year: '2023',
-      description: 'Comprehensive certification covering C++ programming fundamentals and advanced Data Structures & Algorithms, including implementation of complex data structures and algorithm optimization techniques.',
+      description: 'Comprehensive certification covering cloud computing fundamentals, AWS services, and cloud architecture design.',
       link: 'https://certificate.codingninjas.com/view/your-certificate-id',
-      image: '/certifications/cpp.png'
+      image: '/certifications/cloud.png'
     },
     {
       icon: FaCertificate,
-      title: 'Cloud Computing',
+      title: 'Security+',
       issuer: 'CipherSchools',
       year: '2024',
-      description: 'Comprehensive training in cloud computing concepts and technologies',
+      description: 'Comprehensive training in cybersecurity fundamentals, network security, and threat management.',
       link: 'https://www.cipherschools.com/certificate/preview?id=67dc55c5c68dc3ae19f3e96e',
-      image: '/certifications/data.png'
+      image: '/certifications/sec.png'
     },
     {
       icon: FaCertificate,
-      title: 'Supervised Machine Learning',
-      issuer: 'Stanford University',
+      title: 'Microsoft Power Platform',
+      issuer: 'Microsoft',
       year: '2024',
-      description: 'Advanced certification in supervised learning algorithms, model evaluation, and practical applications of machine learning.',
+      description: 'Comprehensive training in Microsoft Power Platform tools including Power BI, Power Apps, and Power Automate for business process automation and data visualization.',
       link: 'https://www.coursera.org/account/accomplishments/verify/your-certificate-id',
-      image: '/certifications/ml.png'
+      image: '/certifications/micro.png'
     }
   ];
 
